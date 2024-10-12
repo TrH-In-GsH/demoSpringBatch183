@@ -1,0 +1,38 @@
+<!DOCTYPE				
+<html>				
+<head>				
+<meta charset="ISO-8859-1">				
+<title>EMPLOY LIST</title>	
+<link rel="stylesheet" th:href="@{/css/style.css}" type="text/css" media="all"> 
+</head>				
+<body>		
+    <h1> EMPLOY LIST </h1>
+    <div><a th:href="@{/findall}">Go to List</a></div>
+    <div><a th:href="@{/add}">Go to Add</a></div>
+    <div><a th:href="@{/download}">Go to Download</a></div>
+	<table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>City</th>
+                    <th>Phone</th>
+                    <th>Email</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+            <tr th:each="emp : ${empList}">
+                <td th:text="${emp.name}"></td>
+                <td th:text="${emp.city}"></td>
+                <td th:text="${emp.phone}"></td>
+                <td th:text="${emp.email}"></td>
+                <td><a th:href="@{/edit(id=${emp.id})}">Edit</a></td>
+                <td><a th:href="@{/delete(id=${emp.id})}">Delete</a></td>
+            </tr>
+          
+            </tbody>
+        </table>			
+</body>				
+</html>				
+				
